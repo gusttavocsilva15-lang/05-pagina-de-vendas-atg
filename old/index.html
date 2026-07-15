@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CHRONOS PREMIUM | Conexão Total, Saúde Sob Medida</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=Inter:wght@400;600&amp;family=Geist:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#0a192f",
+                        "on-background": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "outline-variant": "#44474d",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#233148",
+                        "on-tertiary-fixed": "#002021",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#f4ffc9",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "inverse-primary": "#515f78",
+                        "background": "#131313",
+                        "on-secondary-fixed": "#171e00",
+                        "outline": "#8f9097",
+                        "secondary-container": "#c1ed00",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#546900",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#add500",
+                        "primary": "#b9c7e4",
+                        "on-primary-fixed": "#0d1c32",
+                        "surface-dim": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#001d1f",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-secondary": "#293500",
+                        "surface-bright": "#393939",
+                        "on-surface-variant": "#c5c6cd",
+                        "on-tertiary-container": "#009096",
+                        "tertiary": "#00dce5",
+                        "surface-tint": "#b9c7e4",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#c6f311",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed-variant": "#39475f",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-primary-container": "#74829d",
+                        "on-tertiary": "#003739"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "stack-sm": "24px",
+                        "stack-lg": "80px",
+                        "container-max": "1280px",
+                        "stack-md": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-caps": ["Geist"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 3s infinite ease-in-out;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-body-lg font-extrabold tracking-tighter text-on-background">CHRONOS</div>
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#conectividade">Conectividade</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#saude">Saúde</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#esportes">Esportes</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#specs">Especificações</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label-caps text-label-caps font-bold hover:bg-secondary transition-all">Comprar Agora</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-stack-lg min-h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center relative z-10">
+<div class="reveal">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6">
+                    CHRONOS PREMIUM: <span class="text-secondary">Conexão Total</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    O assistente pessoal definitivo que une alta tecnologia, monitoramento de saúde em tempo real e estilo inigualável.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+<div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
+<span class="font-label-caps text-label-caps text-on-surface-variant line-through block">De R$ 289,00</span>
+<span class="font-headline-md text-headline-md text-secondary">R$ 187,00</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-xl font-label-caps text-label-caps font-bold text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(193,237,0,0.3)] transition-all">
+                        APROVEITE A OFERTA
+                    </button>
+</div>
+</div>
+<div class="relative reveal flex justify-center">
+<div class="absolute -inset-4 bg-secondary/10 blur-[100px] rounded-full"></div>
+<img alt="Smartwatch Chronos Premium" class="relative z-10 w-full max-w-md drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo0w3LEcz0gUsm3705bskppZ75AyXa29LhVhZ-Ixxca_o-g-KcHbqSK9AIEJYWQq2MQPErJ9x9Y7YX5aUOp7Y4_wYkiDjhJKhWDt7skLea3MIigDXl7TYCSPAUWSNXYu6WH8yaYHsUoJVNtRdr2M7u_6X5KWIBXLU-6xky5mFnbZzLK6dHxCdrTD_2I3t3CDMf-554m5-sCiruFmh_foar-9nr4YemXV3dfBUBiSdzLXK1t03TCTbjYSVK0xzdwaAQJUyz3WQa83w"/>
+</div>
+</div>
+</section>
+<!-- Connectivity Section -->
+<section class="py-stack-lg bg-surface-container-lowest" id="conectividade">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-stack-md reveal">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 block uppercase tracking-widest">Conectividade</span>
+<h2 class="font-headline-md text-headline-md mb-4">Sua Vida em Tempo Real.</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Nunca perca o que importa. Receba notificações instantâneas e controle seu mundo direto do seu pulso.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-card p-8 rounded-2xl flex flex-col justify-between reveal">
+<div>
+<div class="flex gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">share</span>
+</div>
+</div>
+<h3 class="font-headline-md text-2xl mb-4">Central de Notificações</h3>
+<p class="text-on-surface-variant mb-8">WhatsApp, Instagram, e-mails e chamadas. Controle sua vida social sem precisar tirar o telefone do bolso.</p>
+</div>
+<img alt="Interface de notificações do Chronos" class="rounded-xl object-cover h-64 w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCacq7Y8XcvmRkhFFY4rwNv9YdUQieKoqZO62Is-ZP26KgRUnqxXxrBw_eGwfwVFmCUKdS3k6E_NRZ51IIfFEoiw-IxL_mDXJybIHJFsKzW0dnH0BWWzHqR7_DjTSVHCpm84sd8y5BCpZU5O-qjzbWFyfWmJHmGoqnjnU6tYavxJ6SP_PdTsYAp9vfogtzw-ZO3VWqxV4WPBLG2fMz56FVVEZQv4Sr6BXPpOpr5VWeQG7FrTTK0LK559Agamlliy6HFLL4nuckKUQo"/>
+</div>
+<div class="glass-card p-8 rounded-2xl flex flex-col justify-between reveal" style="transition-delay: 100ms;">
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Controle de Voz AI</h3>
+<p class="text-on-surface-variant mb-8">Integração completa com assistentes de voz para comandos rápidos e precisos durante seu dia a dia.</p>
+</div>
+<img alt="Chamada Bluetooth e voz AI" class="rounded-xl object-cover h-64 w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1bPe8ONMZs7w8wJodU7AlCIlb9Km7xL_SwRCP7IJGVrW0yrqrsGp3Ddj2mJaZfQmK8XpyE1vMBRO56QagnFWejfkS4CqKzd1CDdlkSNgNlqejnNz9afCDbxYrGniJ-Vb_R2PGkvzQU7Gsg9fREOVZLgkpCDO2UFOZbm6yHCEt56zWMG_wJWF_1M4D-tLNrwLJLDTtEbFyffb6iaU1wb8yDqSzwo2UA4k-jD42T_GA11XgB6X5qmc2C64LQeAW6eYczZyXNdUl_2c"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Health Section -->
+<section class="py-stack-lg" id="saude">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+<div class="order-2 lg:order-1 reveal">
+<div class="relative inline-block">
+<img alt="Monitoramento de saúde" class="rounded-2xl w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCOs2GqVRTGEqDq2UTzrWI-XhJTlkX8OUeQNoTFA56vP4KclrYDMf_W3sqG3tQdqAFdTzobYjjFXB59pH18cSvgbLduhRJpQCSJpX7WNrBv_Okl1GLJs4CGjZpgcHHB89A8snQ3XfyDisUmScEpyLD_ZwZ2Gp41NPf9oNmtjNjeHRsQU4xSEhX75JD5MoFv2tCsVwbWIoRJ5HHZBLWd0H5wmNCheRvtiLV7DWXtVPZt0tI5LSdxCXH2b6X-HvZcovfUr9Xjk2OTV4"/>
+<div class="absolute -bottom-10 -right-10 hidden md:block w-48 animate-pulse-soft">
+<img alt="Watchface saúde" class="rounded-full shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHmRtYZ1X1ANEIe5XDRp981tcPy4usrUGYcvxAq8642FL0hPbgho4Cnw4F_ZPd3XJ-ZWxY4pEQg5MMeKH12JMPSs2nC1Ufd19DBOvHIBUyy6VGqCQNnI2ThFEA9yn7D19mrfsqy5U38ZV0DLGtlDb6DeLgHwOrsitpPiJ-PtPipiZ9j2ERsdkJYSgxdFbaaY0ZykpmLuj4nN3VXopW2BgK7s9wgB_Ld_uwc-N6lgV3LFUDmznGYtHjg4LqJNw-PvP4UchW1MoVl8c"/>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 reveal">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 block uppercase tracking-widest">Saúde e Bem-Estar</span>
+<h2 class="font-headline-md text-headline-md mb-6">Seu Assistente de Bem-Estar 24h.</h2>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<div class="p-3 bg-error-container/20 text-error rounded-xl animate-pulse-soft">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Frequência Cardíaca</h4>
+<p class="text-on-surface-variant text-sm">Monitoramento contínuo com alertas de alta precisão para sua segurança.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="p-3 bg-tertiary-container/40 text-tertiary rounded-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Sono Profundo</h4>
+<p class="text-on-surface-variant text-sm">Análise detalhada dos seus ciclos de sono para noites mais restauradoras.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="p-3 bg-primary-container/40 text-primary rounded-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Lembretes Hidratação</h4>
+<p class="text-on-surface-variant text-sm">Nunca esqueça de beber água ou tomar seus remédios com alertas inteligentes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sports Section -->
+<section class="py-stack-lg bg-surface-container-low overflow-hidden" id="esportes">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+
+</div>
+<div class="flex flex-col lg:flex-row items-center gap-stack-md relative z-10">
+<div class="lg:w-1/2 reveal">
+<h2 class="font-headline-md text-headline-md mb-4">Supere seus Limites.</h2>
+<p class="text-on-surface-variant text-body-lg mb-8">Mais de 100 modos esportivos para acompanhar cada movimento seu, seja no asfalto, na água ou na academia.</p>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="glass-card p-4 rounded-xl text-center">
+<div class="text-secondary font-bold text-2xl">100+</div>
+<div class="text-on-surface-variant text-xs font-label-caps">MODOS</div>
+</div>
+<div class="glass-card p-4 rounded-xl text-center">
+<div class="text-secondary font-bold text-2xl">23.5k</div>
+<div class="text-on-surface-variant text-xs font-label-caps">PASSOS/DIA</div>
+</div>
+<div class="glass-card p-4 rounded-xl text-center">
+<div class="text-secondary font-bold text-2xl">IP68</div>
+<div class="text-on-surface-variant text-xs font-label-caps">RESISTÊNCIA</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 reveal flex justify-center">
+<img alt="Esportes e performance" class="rounded-3xl shadow-2xl max-w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA1UJmT3mW6ShNgDalv24QUA4ZNu4p7GixQ6wUV4UTj1Owf-zarMMIe98F4Q63Jew_VqIYzSpo_Jtsrk0WXlxj0HoFD0nYVHSlqYygKIGoDu3sVy6SAgA74Prs6c9MX6mElkDUyXSeYPB02scxlxDwR_mxn5i7R8veDKOfvCBWu2PH58ZwfcNB95y0R09APMrmYDUu2jjOjS5OPv-9mNQJdgHSpbMa1AR3tcrBqIsWJ5-TX0Hth5nd8c2Tbj1DSvkhiXqCv8HVX_s"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs -->
+<section class="py-stack-lg" id="specs">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-stack-md reveal">
+<h2 class="font-headline-md text-headline-md mb-4">Especificações Técnicas</h2>
+<div class="h-1 w-20 bg-secondary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter reveal">
+<div class="p-6 border border-white/5 rounded-2xl hover:border-secondary/50 transition-colors group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">water_drop</span>
+<h5 class="font-bold mb-2">Resistência</h5>
+<p class="text-sm text-on-surface-variant">Classificação IP68 contra água e poeira.</p>
+</div>
+<div class="p-6 border border-white/5 rounded-2xl hover:border-secondary/50 transition-colors group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">battery_charging_full</span>
+<h5 class="font-bold mb-2">Bateria</h5>
+<p class="text-sm text-on-surface-variant">Até 7 dias de uso intenso por carga.</p>
+</div>
+<div class="p-6 border border-white/5 rounded-2xl hover:border-secondary/50 transition-colors group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">language</span>
+<h5 class="font-bold mb-2">Idiomas</h5>
+<p class="text-sm text-on-surface-variant">Total suporte para Português e Inglês.</p>
+</div>
+<div class="p-6 border border-white/5 rounded-2xl hover:border-secondary/50 transition-colors group">
+<span class="material-symbols-outlined text-secondary mb-4 group-hover:scale-110 transition-transform">verified</span>
+<h5 class="font-bold mb-2">Qualidade</h5>
+<p class="text-sm text-on-surface-variant">Originalidade Garantida de fábrica.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Authenticity Banner -->
+<section class="py-12 bg-secondary text-on-secondary-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div>
+<h3 class="font-bold text-xl uppercase tracking-tight">Originalidade Garantida</h3>
+<p class="text-sm opacity-80">Qualidade original de fábrica com garantia estendida.</p>
+</div>
+</div>
+<button class="bg-on-secondary-container text-secondary px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">Saber Mais</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-md text-headline-md text-on-background mb-2">CHRONOS</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs text-center md:text-left">Elevando sua performance e estilo todos os dias.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacidade</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Termos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Suporte</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Contato</a>
+</div>
+<div class="text-tertiary font-body-md text-center md:text-right">
+                © 2024 Chronos Premium. Garantia de Autenticidade Original.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar / Sticky CTA -->
+<div class="fixed bottom-8 right-8 z-50 flex justify-end p-4">
+<div class="bg-secondary-container text-on-secondary-container rounded-full px-8 py-4 flex items-center gap-2 animate-bounce shadow-[0_0_20px_rgba(193,237,0,0.4)] cursor-pointer hover:scale-105 hover:bg-secondary transition-all active:scale-90">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-caps text-label-caps font-bold">🛒 COMPRAR AGORA</span>
+</div>
+</div>
+<script>
+        // Simple Reveal on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
